@@ -5,6 +5,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 @Entity
 
 public class Student {
@@ -23,6 +26,14 @@ public class Student {
 
     @Min(value = 15, message = "age should be at least 15")
     private int age;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private java.util.List<Grade> grades;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private java.util.List<Enrollment> enrollments;
 
     public Student() {
     }
