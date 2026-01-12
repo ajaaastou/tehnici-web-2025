@@ -3,7 +3,7 @@ package curs_managment.controller;
 import curs_managment.entity.Teacher;
 import curs_managment.service.teacherService;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/teachers")

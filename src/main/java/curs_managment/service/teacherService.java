@@ -1,9 +1,11 @@
 package curs_managment.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import curs_managment.entity.Teacher;
 import curs_managment.repository.teacherRepository;
-import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class teacherService {
@@ -23,12 +25,11 @@ public class teacherService {
                 .orElseThrow(() -> new RuntimeException("Teacher not found"));
     }
 
-    public java.util.List<Teacher> getAllTeachers() {
+    public List<Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
 
     public void deleteTeacher(Long id) {
         teacherRepository.deleteById(id);
     }
-
 }
